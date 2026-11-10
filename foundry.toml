@@ -1,0 +1,29 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc = "0.8.24"
+evm_version = "cancun"
+optimizer = true
+optimizer_runs = 200
+remappings = [
+    # OZ: pinned versions used by chainlink-local
+    "@openzeppelin/contracts@4.8.3/=lib/chainlink-local/lib/openzeppelin-contracts-4.8.3/contracts/",
+    "@openzeppelin/contracts@5.3.0/=lib/chainlink-local/lib/openzeppelin-contracts-5.3.0/contracts/",
+
+    # OZ: your project
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+
+    # Your other deps
+    "forge-std/=lib/forge-std/src/",
+    "@ccip/=node_modules/@chainlink/contracts-ccip/",
+
+    # chainlink-local and its nested submodules
+    "@chainlink/local/=lib/chainlink-local/",
+    "@chainlink/contracts-ccip/=lib/chainlink-local/lib/chainlink-ccip/chains/evm/",
+    "@chainlink/contracts/=lib/chainlink-local/lib/chainlink-evm/contracts/",
+    "@chainlink/policy-management/=lib/chainlink-local/lib/chainlink-ace/packages/policy-management/src/",
+    "@chainlink/cross-chain-identity/=lib/chainlink-local/lib/chainlink-ace/packages/cross-chain-identity/src/",
+]
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

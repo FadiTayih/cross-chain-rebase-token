@@ -1,0 +1,31 @@
+cat > .gitignore <<'EOF'
+# ── Env / secrets ────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# ── Foundry build artifacts ──────────────────────────────────
+out/
+cache/
+broadcast/
+.gas-snapshot
+coverage/
+lcov.info
+
+# ── Node / npm ───────────────────────────────────────────────
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-error.log*
+
+# ── macOS / editors ──────────────────────────────────────────
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# ── Coverage / profiling ─────────────────────────────────────
+*.prof
+EOF
